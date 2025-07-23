@@ -47,6 +47,8 @@ This repository contains a concurrency-safe, fault-tolerant SQL Server stored pr
 | `Create_SP_ProcessNextJob.sql` | Main stored procedure to process unprocessed job items |
 
 ## Scripts
+
+Create_Jobs_Table.sql
 ```sql
 CREATE TABLE dbo.Jobs (
     row_id INT NOT NULL PRIMARY KEY,
@@ -55,14 +57,20 @@ CREATE TABLE dbo.Jobs (
     status VARCHAR(20) NOT NULL DEFAULT 'pending',
     processed_at DATETIME2 NULL
 );
-
+```
+Create_Log_Table.sql
+```sql
 CREATE TABLE dbo.JobProcessingLog (
     log_id INT IDENTITY PRIMARY KEY,
     row_id INT,
     error_message NVARCHAR(MAX),
     error_time DATETIME2 DEFAULT SYSDATETIME()
 );
+```
 
+Create_SP_ProcessNextJob.sql
+
+```sql
 CREATE PROCEDURE dbo.ProcessNextJob
 AS
 BEGIN
