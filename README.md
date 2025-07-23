@@ -192,7 +192,6 @@ Although this solution covers a reliable, concurrent-safe job processor, several
 
 ### 1. Configurable Retry Settings
 - Move the retry count and delay duration to a configuration table (e.g., `dbo.JobSettings`) so changes don’t require altering the stored procedure.
-- Example:
   ```sql
   SELECT @max_retries = MaxRetries FROM dbo.JobSettings WHERE SettingKey = 'PayloadRetryCount';
 
