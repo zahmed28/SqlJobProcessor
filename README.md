@@ -42,9 +42,9 @@ This repository contains a concurrency-safe, fault-tolerant SQL Server stored pr
 
 | File | Description |
 |------|-------------|
-| `create_jobs_table.sql` | Schema for the `Jobs` table |
-| `create_log_table.sql` | Schema for the job error log |
-| `process_next_job_with_retry.sql` | Main stored procedure with retry mechanism |
+| `Create_Jobs_Table.sql` | Schema for the `Jobs` table |
+| `Create_Log_Table.sql` | Schema for the job error log |
+| `Create_SP_ProcessNextJob.sql` | Main stored procedure to process unprocessed job items |
 
 
 ## Usage
